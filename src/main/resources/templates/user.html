@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>用户信息1</title>
+</head>
+<body>
+<div>
+    用户信息
+</div>
+
+<form method="get" >
+    <table>
+        <tr>
+            <td>
+                姓名：<input name="name" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                年龄：<input name="age" type="number"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                电话：<input name="phone" type="text"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                邮箱：<input name="email" type="text"/>
+            </td>
+        </tr>
+
+    </table>
+    <input value="查询" formaction="/user/info" type="submit"/>
+    <input value="提交" formaction="/user/add" type="submit"/>
+    <input value="更新" formaction="/user/update" type="submit"/>
+    <input value="顺序" formaction="/user/group-sequence" type="submit"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bean Validation</title>
+    <script src="/js/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("a#cascade").click(function () {
+                $.ajax({
+                    url: "http://localhost:8080/user/cascade",
+                    type: "POST",
+                    contentType: "application/json" ,
+                    data: JSON.stringify({"id":1,"name":"ddd","school":{"name":null}}),
+                    success: function (data) {
+                        alert(data.message);
+                    },
+                    error: function () {
+                        alert("提交失败！");
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li><a href="/user.htm">基本验证</a></li>
+    <li><a id="cascade">级联验证</a></li>
+    <li><a href=/user/method?uid=2>方法参数</a></li>
+    <li><a href=/user/myValidator?url=www.fuck.cn>自定义约束</a></li>
+    <li><a href=/user/classValidator?pwd1=aaa&pwd2=bbb>类级别验证</a></li>
+    <li><a href=/user/crossParamsValidator?pwd1=aaa&pwd2=bbb>跨参数验证</a></li>
+    <li><a href=/user/scriptValidator?pwd1=aaa&pwd2=bbb>脚本验证</a></li>
+</ul>
+</body>
+</html>
